@@ -53,3 +53,5 @@ def studybuddy_agent():
     user_question = input("Ask StudyBuddy your question: ")
     result = Runner.run_sync(studybuddy, user_question, run_config=run_config)
     print(result.final_output)
+    with open("output.md", "w") as f:
+        f.write(result.final_output)
