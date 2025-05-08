@@ -53,5 +53,8 @@ def studybuddy_agent():
     user_question = input("Ask StudyBuddy your question: ")
     result = Runner.run_sync(studybuddy, user_question, run_config=run_config)
     print(result.final_output)
-    with open("output.md", "w") as f:
+    with open("README.md", "a") as f: 
+        f.write("\n## Example Output from StudyBuddy\n")
+        f.write("```\n")
         f.write(result.final_output)
+        f.write("\n```\n")
